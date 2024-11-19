@@ -1,0 +1,4 @@
+{
+    "question": "What are different classes present in api.py?",
+    "answer": "The file 'api.py' contains one class named 'SemanticSearch'."
+}

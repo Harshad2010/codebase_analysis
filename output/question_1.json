@@ -1,0 +1,4 @@
+{
+    "question": "What functions does api.py have?",
+    "answer": "The 'api.py' file contains the following functions and methods: 'ask_url', 'preprocess', 'load_recommender', 'SemanticSearch.fit', 'generate_text', 'SemanticSearch.__init__', 'generate_answer', 'SemanticSearch.get_text_embedding', 'text_to_chunks', 'download_pdf', 'SemanticSearch.__call__', 'pdf_to_text', and 'load_openai_key'."
+}
