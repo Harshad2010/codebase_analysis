@@ -1,0 +1,47 @@
+```mermaid
+classDiagram
+    class api {
+        +text_to_chunks
+        +generate_answer
+        +generate_text
+        +pdf_to_text
+        +load_recommender
+        +download_pdf
+        +ask_url
+        +preprocess
+        +load_openai_key
+    }
+    class SemanticSearch {
+        +__init__
+        +fit
+        +__call__        
+        +get_text_embedding
+    }
+    api ..> SemanticSearch
+    api ..> os
+    api ..> re
+    api ..> shutil
+    api ..> urllib.request
+    api ..> pathlib.Path
+    api ..> tempfile.NamedTemporaryFile
+    api ..> litellm.completion
+    api ..> fitz
+    api ..> numpy
+    api ..> openai
+    api ..> tensorflow_hub
+    api ..> fastapi.UploadFile
+    api ..> lcserve.serving
+    api ..> sklearn.neighbors.NearestNeighbors
+    class app {
+        +ask_api
+    }
+    app ..> json
+    app ..> tempfile._TemporaryFileWrapper
+    app ..> gradio
+    app ..> requests
+```
+
+- In the above diagram, files `api.py` and `app.py` are represented as classes `api` and `app` respectively.
+- Inside `api` class, standalone functions are listed whereas class `SemanticSearch` is listed separately with its own internal methods.
+- Imports are shown as relations `..> ` between the file and the imported libraries
+- `app.py` doesn't have any context (classes), hence it is represented as a single class `app` with its internal standalone function `ask_api` and its imports are drawn as relationships.

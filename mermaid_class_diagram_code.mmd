@@ -1,0 +1,40 @@
+classDiagram
+    class SemanticSearch {
+        +fit()
+        +__init__()
+        +__call__()
+        +get_text_embedding()
+    }
+    api -- SemanticSearch : contains
+    class api {
+        +preprocess()
+        +text_to_chunks()
+        +load_openai_key()
+        +pdf_to_text()
+        +generate_text()
+        +ask_url()
+        +download_pdf()
+        +generate_answer()
+        +load_recommender()
+    }
+    api ..> os : imports
+    api ..> re : imports
+    api ..> shutil : imports
+    api ..> request : imports
+    api ..> Path : imports
+    api ..> NamedTemporaryFile : imports
+    api ..> completion : imports
+    api ..> fitz : imports
+    api ..> numpy : imports
+    api ..> openai : imports
+    api ..> tensorflow_hub : imports
+    api ..> UploadFile : imports
+    api ..> serving : imports
+    api ..> NearestNeighbors : imports
+    class app {
+        +ask_api()
+    }
+    app ..> json : imports
+    app ..> _TemporaryFileWrapper : imports
+    app ..> gradio : imports
+    app ..> requests : imports
